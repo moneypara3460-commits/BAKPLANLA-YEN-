@@ -1,0 +1,74 @@
+{
+  "expo": {
+    "name": "BAKPLANLA",
+    "slug": "snack-de38fd88-460e-4a8c-9674-8e1f6ada194f",
+    "version": "1.2.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "QR kod okutarak cihazlarını bağlamak ve belge fotoğrafı çekmek için kamera gerekir.",
+        "NSPhotoLibraryUsageDescription": "Belgelerini galeriden eklemek için fotoğraflarına erişim gerekir.",
+        "NSLocationWhenInUseUsageDescription": "\"Bugün Ne Yapsak?\" ekranında mekanların sana uzaklığını hesaplamak için konumun kullanılır."
+      }
+    },
+    "android": {
+      "allowBackup": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "CAMERA",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "POST_NOTIFICATIONS"
+      ],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "QR kod okutmak ve belge fotoğrafı çekmek için kamera izni gerekiyor.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Mekanların sana uzaklığını hesaplamak için konum izni gerekiyor."
+        }
+      ],
+      "expo-notifications",
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": false
+        }
+      ],
+      "./plugins/withAndroidBackupRules",
+      "expo-font"
+    ]
+  }
+}

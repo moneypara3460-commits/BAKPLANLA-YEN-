@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>BAKPLANLA DEV Cashier</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/supabase.js"></script>
+    <script src="/config.js"></script>
+    <script src="/cashier.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">PRIVATE DEVELOPMENT TOOL</p>
+        <h1>Cashier</h1>
+        <p class="notice">DEV environment only. This page is not the client's cashier website.</p>
+      </header>
+
+      <p id="status" class="status" role="status" aria-live="polite">Checking local DEV configuration…</p>
+
+      <section id="sign-in-panel" class="panel" hidden>
+        <h2>Sign in</h2>
+        <form id="sign-in-form">
+          <label for="email">Cashier email</label>
+          <input id="email" name="email" type="email" autocomplete="username" required />
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+          <button id="sign-in" type="submit">Sign in</button>
+        </form>
+      </section>
+
+      <section id="cashier-panel" class="panel" hidden>
+        <div class="session-row">
+          <span id="signed-in-as"></span>
+          <button id="sign-out" class="secondary" type="button">Sign out</button>
+        </div>
+        <form id="redeem-form">
+          <label for="partner">Authorized business</label>
+          <select id="partner" name="partner" required></select>
+          <label for="code">Six-digit customer code</label>
+          <input id="code" name="code" type="text" inputmode="numeric" autocomplete="off" maxlength="64" required />
+          <label for="pin">Business PIN</label>
+          <input id="pin" name="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="128" required />
+          <button id="redeem" type="submit">Redeem code</button>
+        </form>
+      </section>
+
+      <footer>Business access is assigned by an administrator. Signing in does not grant cashier access.</footer>
+    </main>
+  </body>
+</html>
